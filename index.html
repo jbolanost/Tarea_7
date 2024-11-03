@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Capibara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h2 {
+            color: white;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .info {
+            flex: 1;
+            margin-right: 20px;
+            text-align: justify;
+        }
+        img {
+            max-width: 475px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        iframe {
+            display: block;
+            margin: 0;
+            border: none;
+            max-width: 100%;
+        }
+        .survey {
+            margin-top: 70px;
+            flex: 1;
+            margin-left: 150px;
+            color: #333;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 267px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>El Capibara</h1>
+    </header>
+
+    <main class="content">
+        <div class="info-container">
+            <div class="info">
+                <h2>¿Qué es el Capibara?</h2>
+                <p>
+                    El capibara (Hydrochoerus hydrochaeris) es el roedor más grande del
+                    mundo y se encuentra principalmente en regiones de América del Sur,
+                    como Brasil, Venezuela, Colombia y Argentina. Estos animales,
+                    también conocidos como carpinchos, viven cerca de cuerpos de agua
+                    dulce como ríos, pantanos y lagunas, ya que dependen del agua para
+                    mantenerse frescos y protegidos de los depredadores. Son mamíferos
+                    herbívoros y su dieta incluye hierbas, plantas acuáticas y frutos,
+                    los cuales consiguen en las zonas húmedas donde habitan. Además, su
+                    densa capa de pelo y sus patas parcialmente palmeadas los hacen
+                    excelentes nadadores, capaces de permanecer bajo el agua por largos
+                    períodos para escapar de amenazas.
+                </p>
+                <p>
+                    Los capibaras son animales sociales que suelen vivir en grupos de
+                    entre 10 y 20 individuos, aunque pueden formar comunidades aún
+                    mayores en áreas con abundantes recursos. Tienen un sistema social
+                    estructurado, con un macho dominante que lidera el grupo. Su
+                    comportamiento es generalmente tranquilo y pacífico, y muestran una
+                    gran tolerancia hacia otras especies, incluyendo aves y pequeños
+                    mamíferos que suelen posarse sobre ellos para alimentarse de
+                    parásitos. A pesar de ser cazados en algunas zonas por su carne y
+                    piel, los capibaras cuentan con poblaciones estables en la mayoría
+                    de sus hábitats naturales, siendo una especie de interés tanto ecológico 
+                    como cultural en diversas regiones de Sudamérica.
+                </p>
+            </div>
+            <img src="img/Capibara.jpeg" alt="Capib ara" />
+        </div>
+
+        <div class="video-container">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Vr9auAyeSbY"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <div class="survey">
+                <h1>¿LISTO PARA UNA PEQUEÑA PRUEBA?</h1>
+                <form id="surveyForm">
+                    <button type="button" onclick="nextPage()">
+                        <h2>¡VAMOS!</h2>
+                    </button>
+                </form>
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function nextPage() {
+            window.location.href = "prueba/test.html"; // Reemplaza con la URL deseada
+        }
+    </script>
+</body>
+</html>

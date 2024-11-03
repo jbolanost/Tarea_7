@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba sobre el Capibara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        input[type="text"], input[type="email"] {
+            width: 97%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prueba sobre el Capibara</h1>
+    </header>
+
+    <div class="content">
+        <form id="quizForm">
+            <input type="text" id="name" placeholder="Tu nombre" required />
+            <input type="email" id="email" placeholder="Tu correo electrónico" required />
+
+            <div class="question">
+                <h2>1. ¿Cuál es el hábitat natural del capibara?</h2>
+                <label><input type="radio" name="q1" value="a"> Bosques secos</label>
+                <label><input type="radio" name="q1" value="b"> Zonas áridas</label>
+                <label><input type="radio" name="q1" value="c"> Cerca de cuerpos de agua</label>
+                <label><input type="radio" name="q1" value="d"> Montañas</label>
+            </div>
+
+            <div class="question">
+                <h2>2. ¿Qué tipo de dieta tiene el capibara?</h2>
+                <label><input type="radio" name="q2" value="a"> Carnívora</label>
+                <label><input type="radio" name="q2" value="b"> Herbívora</label>
+                <label><input type="radio" name="q2" value="c"> Omnívora</label>
+                <label><input type="radio" name="q2" value="d"> Insectívora</label>
+            </div>
+
+            <div class="question">
+                <h2>3. ¿Qué tamaño puede alcanzar un capibara adulto?</h2>
+                <label><input type="radio" name="q3" value="a"> 50 cm</label>
+                <label><input type="radio" name="q3" value="b"> 1 metro</label>
+                <label><input type="radio" name="q3" value="c"> 1.5 metros</label>
+                <label><input type="radio" name="q3" value="d"> 2 metros</label>
+            </div>
+
+            <div class="question">
+                <h2>4. ¿Cómo se llaman los grupos de capibaras?</h2>
+                <label><input type="radio" name="q4" value="a"> Manadas</label>
+                <label><input type="radio" name="q4" value="b"> Bandadas</label>
+                <label><input type="radio" name="q4" value="c"> Colonias</label>
+                <label><input type="radio" name="q4" value="d"> Comunidades</label>
+            </div>
+
+            <div class="question">
+                <h2>5. ¿Qué es característico de la piel del capibara?</h2>
+                <label><input type="radio" name="q5" value="a"> Es muy delgada</label>
+                <label><input type="radio" name="q5" value="b"> Es muy gruesa</label>
+                <label><input type="radio" name="q5" value="c"> Es densa y palmeada</label>
+                <label><input type="radio" name="q5" value="d"> Es escamosa</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz()">Finalizar y Enviar</button>
+            <div class="result" id="result"></div>
+        </form>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let q1 = document.querySelector('input[name="q1"]:checked').value;
+            let q2 = document.querySelector('input[name="q2"]:checked').value;
+            let q3 = document.querySelector('input[name="q3"]:checked').value;
+            let q4 = document.querySelector('input[name="q4"]:checked').value;
+            let q5 = document.querySelector('input[name="q5"]:checked').value;
+
+            let score = 0;
+            if (q1 === "c") score++;
+            if (q2 === "b") score++;
+            if (q3 === "c") score++;
+            if (q4 === "d") score++;
+            if (q5 === "c") score++;
+
+            let resultText = `Hola ${name}! Tu correo electrónico es ${email}. Has obtenido ${score} de 5 puntos.`;
+            document.getElementById("result").innerHTML = resultText;
+            document.getElementById("quizForm").reset();
+        }
+    </script>
+</body>
+</html>
